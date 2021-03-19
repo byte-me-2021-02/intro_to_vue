@@ -11,6 +11,8 @@
   <div id="app">
     <h1>{{ message }}</h1>
     <p>{{ name }}</p>
+    <button v-on:click="changeMessage">Click this for a surprise!</button>
+    <p>Here is the name: <input type="text" v-model="name"></p>
   </div>
 </body>
 </html>
