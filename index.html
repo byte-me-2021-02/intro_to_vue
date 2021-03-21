@@ -13,6 +13,12 @@
     <p>{{ name }}</p>
     <button v-on:click="changeMessage">Click this for a surprise!</button>
     <p>Here is the name: <input type="text" v-model="name"></p>
+    <hr>
+    {{ showSecret }}
+    <div v-if="showSecret">
+      This is a secret message
+    </div>
+    <button v-on:click="toggleSecret">Toggle showing secret</button>
   </div>
 </body>
 </html>
