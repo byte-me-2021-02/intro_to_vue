@@ -5,7 +5,8 @@ var app = new Vue({
   data: {    
     message: "Hello from JavaScript!",
     name: "briann",
-    showSecret: false
+    showSecret: false,
+    fruits: ["apple", "banana", "honeydew"]
   },
   methods: {
     changeMessage: function() {
