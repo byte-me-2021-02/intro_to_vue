@@ -6,7 +6,8 @@ var app = new Vue({
     message: "Hello from JavaScript!",
     name: "briann",
     showSecret: false,
-    fruits: ["apple", "banana", "honeydew"]
+    fruits: ["apple", "banana", "honeydew"],
+    newFruit: ""
   },
   methods: {
     changeMessage: function() {
@@ -21,6 +22,17 @@ var app = new Vue({
       // } else {
       //   this.showSecret = true;
       // }
+    },
+    addFruit: function() {
+      console.log('adding fruit...')
+      // access newFruit
+      console.log(this.newFruit);
+      // access the fruits array
+      console.log(this.fruits);
+      // add newFruit to the fruits array
+      this.fruits.push(this.newFruit);
+      // reset the value of newFruit
+      this.newFruit = "";
     }
   }
 });

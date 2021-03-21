@@ -33,9 +33,11 @@
     <!-- {{ fruits }} -->
 
     <!-- fruits.each do |fruit| -->
-    <div v-for="fruit in fruits">
+    <div v-for="fruit in fruits">      
       {{ fruit }}
     </div>
+    <input type="text" v-model="newFruit">
+    <button v-on:click="addFruit">Add a new fruit</button>
   </div>
 </body>
 </html>
