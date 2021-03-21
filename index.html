@@ -5,6 +5,13 @@
   <title>Practice Vue.js</title>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="index.js" defer></script>
+  <style>
+    .disabled {
+      color: LightGray;
+      transition: color 4s ease;
+    }
+  </style>
+  
 </head>
 <body>
   <h1>Hello from HTML!</h1>
@@ -14,9 +21,12 @@
     <button v-on:click="changeMessage">Click this for a surprise!</button>
     <p>Here is the name: <input type="text" v-model="name"></p>
     <hr>
-    {{ showSecret }}
-    <div v-if="showSecret">
+    {{ showSecret }}    
+    <!-- <div v-if="showSecret">
       This is a secret message
+    </div> -->
+    <div v-bind:class="{disabled: showSecret}">
+      This is kind of a secret
     </div>
     <button v-on:click="toggleSecret">Toggle showing secret</button>
   </div>
