@@ -8,17 +8,31 @@ var app = new Vue({
   data: function() {
     return {
       message: "Hello Vue!",
+      newTodo: "",
       todos: []
     };
   },
   methods: {
-    makeWebRequest: function() {
-      console.log('making web request...')
+    loadTodos: function() {
+      console.log('about to make a web request');
       axios.get("https://jsonplaceholder.typicode.com/todos").then(response => {
-        this.todos = response.data;
+        console.log(response.data);
+        this.todos = response.data;      
+      }) 
+    },
+    makeNewTodo: function() {
+      console.log('post request');
+      axios.post("https://jsonplaceholder.typicode.com/todos", {
+        userId: 4,
+        title: this.newTodo        
+      }).then(response => {
         console.log(response);
-      });
-      console.log('on line 16')
+        this.todos.push(response.data);
+      })
     }
+  },
+  created: function() {
+    console.log('in created...');
+    this.loadTodos();
   }
 });

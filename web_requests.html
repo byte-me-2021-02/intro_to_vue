@@ -17,11 +17,13 @@
 <body>
   <div id="app">
     {{message}}
-    <!-- {{todos}} -->
+    <!-- {{ todos }} -->
+    <input type="text" v-model="newTodo">
+    <p><button v-on:click="makeNewTodo">Make post request</button></p>
     <div v-for="todo in todos">
-      {{todo.id}}. {{ todo.title }}
+      <p>{{ todo.title }}</p>
     </div>
-    <button v-on:click="makeWebRequest">Make web request</button>
+    <p><button v-on:click="loadTodos">Load items</button></p>
   </div>
   
 </body>
