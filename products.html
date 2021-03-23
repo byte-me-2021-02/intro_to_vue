@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Practice Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="products.js" defer></script>
+  </head>
+  <body>
+    <h1>Hello from HTML!</h1>
+    <div id="app">
+      {{ message }}
+      <p>Name: <input type="text" v-model="name"></p>
+      <p>Description: <input type="text" v-model="description"></p>
+      <p>Price: <input type="text" v-model="price"></p>
+      <p>image url: <input type="text" v-model="image_url"></p>
+      <button v-on:click="createProduct">Make a new Product</button>
+    </div>
+  </body>
+</html>
